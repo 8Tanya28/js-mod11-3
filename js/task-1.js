@@ -1,57 +1,27 @@
-// Напиши скрипт, який для об'єкта user послідовно:
+// Розстав відсутні this в методах об'єкта account.
 
-// додає поле mood зі значенням'happy'
-// замінює значення hobby на'skydiving'
-// замінює значення premium на false
-// виводить вміст об'єкта user у форматі ключ:значение
-// використовуючи Object.keys()та for...of
-// const user = {
-//   name: 'Mango',
-//   age: 20,
-//   hobby: 'html',
-//   premium: true,
-// };
-
-// const user = {
-//   name: "Mango",
-//   age: 20,
-//   hobby: "html",
-//   premium: true,
-// };
-
-// user.mood = "happy";
-// console.log(user);
-
-// user.hobby = "skydiving";
-// console.log(user);
-
-// user.premium = false;
-// console.log(user);
-
-// 2 variant
-
-const user = {
-  name: "Mango",
-  age: 20,
-  hobby: "html",
-  premium: true,
-  mood(newMood) {
-    this.mood = newMood;
+const account = {
+  owner: "Mango",
+  balance: 24000,
+  discount: 0.1,
+  orders: ["order-1", "order-2", "order-3"],
+  changeDiscount(value) {
+    discount = value;
   },
-  updateHobby(newHobby) {
-    //свойство, в котором лежит функция
-    this.hobby = newHobby; //обращение к объекту через ключевое слово this
+  showOrders() {
+    return orders;
   },
-  updatePremium(newPremium) {
-    this.premium = newPremium;
+  addOrder(cost, order) {
+    balance -= cost;
+    orders.push(order);
   },
 };
 
-user.mood = "happy";
-user.updateHobby("skydiving");
-user.updatePremium(false);
+account.changeDiscount(0.15);
+console.log(account.discount); // 0.15
 
-const keys = Object.keys(user);
-for (const key of keys) {
-  console.log(`${key}:${user[key]}`);
-}
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+account.addOrder(5000, "order-4");
+console.log(account.balance); // 19000
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
