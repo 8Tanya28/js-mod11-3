@@ -1,38 +1,26 @@
-// Напиши функцію-конструктор Account, що створює об'єкт
-// із властивостями login та email. У prototype функції-конструктора
-// додай метод getInfo(), який виводить у консоль значення полів
-// login та email об'єкта, який його викликав.
-// console.log(Account.prototype.getInfo); // function
-// const mango = new Account({
-//   login: 'Mangozedog',
-//   email: 'mango@dog.woof',});
-// mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
-// const poly = new Account({
-//   login: 'Poly',
-//   email: 'poly@mail.com',});
-// poly.getInfo(); // Login: Poly, Email: poly@mail.com
+// Перемикач кольорів
+// Є масив кольорів в hex-форматі і кнопки Start і Stop.
 
-const Account = function ({ login, email }) {
-  this.login = login;
-  this.email = email;
-};
+// <button type="button" data-action="start">Start</button>
+// <button type="button" data-action="stop">Stop</button>
+// const colors = [
+//   '#FFFFFF',
+//   '#2196F3',
+//   '#4CAF50',
+//   '#FF9800',
+//   '#009688',
+//   '#795548',
+// ];
+// Напиши скрипт, який після натискання кнопки Start, раз в секунду змінює колір
+//  фону body на випадкове значення з масиву використовуючи інлайн-стиль.
+//  При натисканні на кнопку Stop, зміна кольору фону повинна зупинятися.
 
-Account.prototype.getInfo = function () {
-  console.log(`Login: ${this.login}, Email: ${this.email}`);
-};
+// ⚠️ Врахуй, на кнопку Start можна натиснути нескінченну кількість разів.
+// Зроби так, щоб поки зміна теми запушено, кнопка Start була не активна.
 
-console.log(Account.prototype.getInfo); // function
+// Для генерації випадкового числа (індекс елемента масиву квітів), використовуй
+//  функцію randomIntegerFromInterval.
 
-const mango = new Account({
-  login: "Mangozedog",
-  email: "mango@dog.woof",
-});
-
-mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
-
-const poly = new Account({
-  login: "Poly",
-  email: "poly@mail.com",
-});
-
-poly.getInfo(); // Login: Poly, Email: poly@mail.com
+// const randomIntegerFromInterval = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// };
